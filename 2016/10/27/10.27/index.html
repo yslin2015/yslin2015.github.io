@@ -84,25 +84,22 @@
 
 
 
-<meta name="description" content="&amp;gt;
-###崩溃问题
+<meta name="description" content="###崩溃问题
 ####问题：对象强转后执行强转后对象的方法和属性导致崩溃
-####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnot">
+####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnotation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 杂记">
 <meta property="og:url" content="http://yoursite.com/2016/10/27/10.27/index.html">
 <meta property="og:site_name" content="yslin的博客">
-<meta property="og:description" content="&amp;gt;
-###崩溃问题
+<meta property="og:description" content="###崩溃问题
 ####问题：对象强转后执行强转后对象的方法和属性导致崩溃
-####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnot">
-<meta property="og:updated_time" content="2016-10-28T03:20:48.000Z">
+####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnotation">
+<meta property="og:updated_time" content="2016-10-28T03:24:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 杂记">
-<meta name="twitter:description" content="&amp;gt;
-###崩溃问题
+<meta name="twitter:description" content="###崩溃问题
 ####问题：对象强转后执行强转后对象的方法和属性导致崩溃
-####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnot">
+####原因：当前view.annotation类型和强转对象的类型不一致12345678910- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &amp;#123;	MyPointAnnotation">
 
 
 
@@ -285,11 +282,9 @@
       
 
       
-        <p>&gt;</p>
-<p>###崩溃问题</p>
+        <p>###崩溃问题</p>
 <p>####问题：对象强转后执行强转后对象的方法和属性导致崩溃</p>
 <p>####原因：当前view.annotation类型和强转对象的类型不一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view &#123;</div><div class="line">	MyPointAnnotation *annotation = (MyPointAnnotation *)view.annotation;</div><div class="line">	MyAnimatedAnnotationView *myView = (MyAnimatedAnnotationView *)view;</div><div class="line">    myView.canShowCallout = NO;</div><div class="line">    NSString *name = annotation.title;</div><div class="line">    NSLog(@&quot;%@&quot;,annotation.dealer.address);//此句崩溃</div><div class="line">	if (![name isEqualToString:@&quot;我的位置&quot;]) &#123;</div><div class="line">        myView.annotationImageView.image = [UIImage imageNamed:DEALER_IMAGE_NAME];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&gt;</p>
 <p>================================================================<br>&gt;</p>
 <p>###小知识</p>
 <p>####KVO的使用<br>1.监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[_gMapView addObserver:self</div><div class="line">	            forKeyPath:@&quot;myLocation&quot;</div><div class="line">	               options:NSKeyValueObservingOptionNew</div><div class="line">	               context:NULL];</div></pre></td></tr></table></figure></p>
